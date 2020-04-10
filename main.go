@@ -17,8 +17,11 @@ import (
 )
 
 func main() {
+	log.Println("0")
 	http.HandleFunc("/", handler)
+	log.Println("1")
 	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Println("2")
 }
 
 func createImage(lat float64, long float64) string {
