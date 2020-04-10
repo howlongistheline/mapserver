@@ -44,7 +44,7 @@ func createImage(lat float64, long float64) string {
 func handler(w http.ResponseWriter, r *http.Request) {
 	request := r.URL.String()
 	if strings.Contains(request, "K3340") { //put some API security here if the service gets abused.
-		request = strings.TrimLeft(request, "/")
+		request = strings.TrimLeft(request, "/maps/")
 		parsed := strings.Split(request, ",")
 		lat, _ := strconv.ParseFloat(parsed[0], 64)
 		long, _ := strconv.ParseFloat(parsed[1], 64)
